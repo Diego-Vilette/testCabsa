@@ -1,5 +1,7 @@
 package es.cabsa.javadevelopers.services;
 
-public class ExampleService {
+public class AnimalService {
+
+
 
 }
