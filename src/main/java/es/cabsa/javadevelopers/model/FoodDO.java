@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 @Table(
         name = "food",
-        uniqueConstraints = @UniqueConstraint(name = "uc_name", columnNames = {"name"})
+        uniqueConstraints = @UniqueConstraint(name = "uc_food_name", columnNames = {"name"})
 )
 public class FoodDO {
 

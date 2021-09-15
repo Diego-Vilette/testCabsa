@@ -1,9 +1,7 @@
-package es.cabsa.javadevelopers.services.animal;
+package es.cabsa.javadevelopers.service.animal;
 
 import es.cabsa.javadevelopers.exceptions.BadRequestException;
 import es.cabsa.javadevelopers.model.AnimalDO;
-
-import java.util.List;
 
 public interface IAnimalService {
 

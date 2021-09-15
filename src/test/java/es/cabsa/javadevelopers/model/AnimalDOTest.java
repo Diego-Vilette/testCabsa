@@ -20,7 +20,7 @@ public class AnimalDOTest {
     @Test
     void legsShouldBe4(){
         AnimalDO animal = new AnimalDO(1,"bear",4, null);
-        assertEquals(1, animal.getLegs());
+        assertEquals(4, animal.getLegs());
     }
 
     @Test

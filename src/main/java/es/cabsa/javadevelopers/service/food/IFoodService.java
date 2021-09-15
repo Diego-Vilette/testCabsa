@@ -1,4 +1,4 @@
-package es.cabsa.javadevelopers.services.food;
+package es.cabsa.javadevelopers.service.food;
 
 import es.cabsa.javadevelopers.exceptions.BadRequestException;
 import es.cabsa.javadevelopers.model.FoodDO;
