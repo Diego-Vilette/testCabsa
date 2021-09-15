@@ -1,12 +1,28 @@
 package es.cabsa.javadevelopers.model;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(
+        name = "animal",
+        uniqueConstraints = @UniqueConstraint(name = "uc_name", columnNames = {"name"})
+)
 public class AnimalDO {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final int id;
+
+    @Column(nullable = false)
     private final String name;
+
+    @Column(nullable = false)
     private final int legs;
-    private final List<FoodDO> diet;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable
+    private List<FoodDO> diet;
 
     public AnimalDO(int id, String name, int legs, List<FoodDO> diet){
         this.id = id;
