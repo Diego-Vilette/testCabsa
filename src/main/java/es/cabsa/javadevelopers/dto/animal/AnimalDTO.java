@@ -1,17 +1,18 @@
-package es.cabsa.javadevelopers.dto;
+package es.cabsa.javadevelopers.dto.animal;
 
+import es.cabsa.javadevelopers.dto.food.FoodNameDTO;
 import es.cabsa.javadevelopers.model.FoodDO;
 
 import java.util.List;
 
 public class AnimalDTO {
     private String name;
-    private List<FoodDO> diet;
+    private List<String> diet;
 
     public AnimalDTO(){
     }
 
-    public AnimalDTO(String name, List<FoodDO> diet){
+    public AnimalDTO(String name, List<String> diet){
         this.name = name;
         this.diet = diet;
     }
@@ -24,11 +25,11 @@ public class AnimalDTO {
         this.name = name;
     }
 
-    public List<FoodDO> getDiet(){
+    public List<String> getDiet(){
         return diet;
     }
 
-    public void setDiet(List<FoodDO> diet){
+    public void setDiet(List<String> diet){
         this.diet = diet;
     }
 

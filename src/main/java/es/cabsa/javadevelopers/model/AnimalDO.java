@@ -12,17 +12,24 @@ public class AnimalDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final int id;
+    private int id;
 
     @Column(nullable = false)
-    private final String name;
+    private String name;
 
     @Column(nullable = false)
-    private final int legs;
+    private int legs;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable
     private List<FoodDO> diet;
+
+    public AnimalDO(){}
+
+    public AnimalDO(String name, List<FoodDO> diet){
+        this.name = name;
+        this.diet = diet;
+    }
 
     public AnimalDO(int id, String name, int legs, List<FoodDO> diet){
         this.id = id;
@@ -47,5 +54,11 @@ public class AnimalDO {
         return diet;
     }
 
+    public void setLegs(int legs){
+        this.legs = legs;
+    }
 
+    public void setId(int id){
+        this.id = id;
+    }
 }
