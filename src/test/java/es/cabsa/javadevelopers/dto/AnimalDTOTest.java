@@ -1,4 +1,6 @@
 package es.cabsa.javadevelopers.dto;
+import es.cabsa.javadevelopers.dto.animal.AnimalDTO;
+import es.cabsa.javadevelopers.dto.food.FoodNameDTO;
 import es.cabsa.javadevelopers.model.FoodDO;
 import org.junit.jupiter.api.Test;
 
@@ -31,9 +33,8 @@ public class AnimalDTOTest {
     @Test
     void shouldSetDiet(){
         AnimalDTO dto = new AnimalDTO();
-        List<FoodDO> diet = new ArrayList<FoodDO>();
-        FoodDO food = new FoodDO(1, "vermin");
-        diet.add(food);
+        List<String> diet = new ArrayList<String>();
+        diet.add("vermin");
         dto.setDiet(diet);
         assertNotNull(dto.getDiet());
     }

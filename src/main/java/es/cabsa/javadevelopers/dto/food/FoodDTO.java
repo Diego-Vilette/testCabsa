@@ -1,16 +1,20 @@
-package es.cabsa.javadevelopers.dto;
+package es.cabsa.javadevelopers.dto.food;
 import es.cabsa.javadevelopers.model.AnimalDO;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class FoodDTO {
+
+    @NotNull(message = "Name can not be null!")
     private String name;
-    private List<AnimalDO> eatenBy;
+
+    private List<String> eatenBy;
 
     public FoodDTO(){
     }
 
-    public FoodDTO(String name, List<AnimalDO> eatenBy){
+    public FoodDTO(String name, List<String> eatenBy){
         this.name = name;
         this.eatenBy = eatenBy;
     }
@@ -23,11 +27,11 @@ public class FoodDTO {
         this.name = name;
     }
 
-    public List<AnimalDO> getEatenBy(){
+    public List<String> getEatenBy(){
         return eatenBy;
     }
 
-    public void setDiet(List<AnimalDO> eatenBy){
+    public void setEatenBy(List<String> eatenBy){
         this.eatenBy = eatenBy;
     }
 }

@@ -12,21 +12,26 @@ public class FoodDO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final int id;
+    private int id;
 
     @Column(nullable = false)
-    private final String name;
+    private String name;
 
-    @ManyToMany(mappedBy = "diet")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "diet")
     private List<AnimalDO> eatenBy;
 
-    public FoodDO(int id, String name){
-        this.id = id;
+    public FoodDO(){}
+
+    public FoodDO(String name){
         this.name = name;
     }
 
     public int getId(){
         return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
     public String getName(){
@@ -35,5 +40,9 @@ public class FoodDO {
 
     public List<AnimalDO> getEatenBy(){
         return eatenBy;
+    }
+
+    public void setEatenBy(List<AnimalDO> eatenBy){
+        this.eatenBy = eatenBy;
     }
 }
