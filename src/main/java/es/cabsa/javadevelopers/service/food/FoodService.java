@@ -3,7 +3,9 @@ package es.cabsa.javadevelopers.service.food;
 import es.cabsa.javadevelopers.exceptions.BadRequestException;
 import es.cabsa.javadevelopers.model.FoodDO;
 import es.cabsa.javadevelopers.repository.IFoodRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FoodService implements  IFoodService{
 
     private final IFoodRepository iFoodRepository;

@@ -3,7 +3,9 @@ package es.cabsa.javadevelopers.service.animal;
 import es.cabsa.javadevelopers.exceptions.BadRequestException;
 import es.cabsa.javadevelopers.model.AnimalDO;
 import es.cabsa.javadevelopers.repository.IAnimalRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AnimalService implements IAnimalService{
 
     private final IAnimalRepository iAnimalRepository;

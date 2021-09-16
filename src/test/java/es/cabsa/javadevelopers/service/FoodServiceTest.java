@@ -20,19 +20,19 @@ public class FoodServiceTest {
 
     @Test
     void ShouldFindFoodById() {
-        FoodDO food = new FoodDO(1,"carrot");
+        FoodDO food = new FoodDO("carrot");
         Optional<FoodDO> optional = Optional.of(food);
 
         when(iFoodRepository.findById(1)).thenReturn(optional);
 
         FoodDO savedFood = foodService.find(1);
 
-        assertEquals(savedFood.getId(), food.getId());
+        assertEquals(savedFood.getName(), food.getName());
     }
 
     @Test
     void ShouldThrowExceptionFindingById() {
-        FoodDO food = new FoodDO(1,"carrot");
+        FoodDO food = new FoodDO("carrot");
 
         when(iFoodRepository.findById(1)).thenThrow(new BadRequestException());
 
@@ -41,19 +41,19 @@ public class FoodServiceTest {
 
     @Test
     void ShouldFindFoodByName() {
-        FoodDO food = new FoodDO(1,"carrot");
+        FoodDO food = new FoodDO("carrot");
         Optional<FoodDO> optional = Optional.of(food);
 
         when(iFoodRepository.findByName("carrot")).thenReturn(optional);
 
         FoodDO savedFood = foodService.findByName("carrot");
 
-        assertEquals(savedFood.getId(), food.getId());
+        assertEquals(savedFood.getName(), food.getName());
     }
 
     @Test
     void ShouldThrowExceptionFindingByName() {
-        FoodDO food = new FoodDO(1,"carrot");
+        FoodDO food = new FoodDO("carrot");
 
         when(iFoodRepository.findByName("1")).thenThrow(new BadRequestException());
 
@@ -62,7 +62,7 @@ public class FoodServiceTest {
 
     @Test
     void ShouldCreateANewFood(){
-        FoodDO food = new FoodDO(1,"carrot");
+        FoodDO food = new FoodDO("carrot");
 
         when(iFoodRepository.save(food)).thenReturn(food);
 
@@ -73,7 +73,7 @@ public class FoodServiceTest {
 
     @Test
     void ShouldThrowExceptionSaving(){
-        FoodDO food = new FoodDO(1,"carrot");
+        FoodDO food = new FoodDO("carrot");
 
         when(iFoodRepository.save(food)).thenThrow(new BadRequestException());
 
